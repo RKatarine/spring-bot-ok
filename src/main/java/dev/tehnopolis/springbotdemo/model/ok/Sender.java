@@ -1,4 +1,4 @@
-package dev.tehnopolis.springbotdemo.model;
+package dev.tehnopolis.springbotdemo.model.ok;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

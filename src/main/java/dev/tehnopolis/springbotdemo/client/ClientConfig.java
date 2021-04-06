@@ -12,5 +12,9 @@ public class ClientConfig {
     private String methodUrlTemplate;
     private String subscribeMethod;
     private String subscriptionMethod;
+    private String sendMessageMethodTemplate;
     private String token;
+    private String translateMethod;
+    private String xRapidapiKey;
+    private String xRapidapiHost;
 }

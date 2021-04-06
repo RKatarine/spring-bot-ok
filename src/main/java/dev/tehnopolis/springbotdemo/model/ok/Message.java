@@ -1,4 +1,4 @@
-package dev.tehnopolis.springbotdemo.model;
+package dev.tehnopolis.springbotdemo.model.ok;
 
 import lombok.Data;
 import lombok.ToString;

@@ -1,4 +1,4 @@
-package dev.tehnopolis.springbotdemo.model;
+package dev.tehnopolis.springbotdemo.client.ok;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponseHook {
-    boolean success;
+public class SubscribeBody {
+    String url;
 }

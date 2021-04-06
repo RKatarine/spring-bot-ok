@@ -1,5 +1,8 @@
-package dev.tehnopolis.springbotdemo.client;
+package dev.tehnopolis.springbotdemo.client.ok;
 
+import dev.tehnopolis.springbotdemo.client.ClientConfig;
+import dev.tehnopolis.springbotdemo.client.urbanDict.SendMessageResponse;
+import dev.tehnopolis.springbotdemo.client.urbanDict.SendedMessageBody;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,5 +69,24 @@ public class OdnoklassnikiClient {
             logger.info("There is no subscription " + botHook);
         }
         return result;
+    }
+
+    public boolean sendMessage(String chatId, String text){
+
+        String methodUrl =  String.format(
+                config.getMethodUrlTemplate(),
+                String.format(config.getSendMessageMethodTemplate(), chatId),
+                config.getToken()
+        );
+
+        SendedMessageBody body =  new SendedMessageBody(chatId, text);
+
+        final SendMessageResponse response = template.postForObject(
+                methodUrl,
+                body,
+                SendMessageResponse.class
+        );
+
+        return response.isSuccess();
     }
 }
